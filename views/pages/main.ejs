@@ -1,0 +1,39 @@
+<%- include ('../partials/header') %>
+<%- include ('../partials/menu') %>
+
+<style>
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+</style>
+<div class="container text-center">
+    <div class="search">
+       <form action="" method="post">
+          <input type="text" id="search" name="search" placeholder="Enter a movie">
+          <input type="submit" name="submit">
+       </form>
+    </div>
+
+  <div class="populate">
+    <%
+    if(movies) {
+    %>
+
+        <div class="card text-center" style="width: 18rem;">
+          <img class="card-img-top" src="<%- movies.Poster %>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%- movies.Title %></h5>
+            <p class="card-text">Cast: <%- movies.Actors %></p>
+            <p class="card-text">Genre: <%- movies.Genre %></p>
+            <p class="card-text">Plot: <%- movies.Plot %></p>
+            <p class="card-text">Release Date: <%- movies.Released %></p>
+            <p class="card-text">IMDB Rating: <%- movies.imdbRating %></p>
+          </div>
+        </div>
+    <%
+    }
+    %>
+  </div>
+</div>
+
+<%- include ('../partials/footer') %>
